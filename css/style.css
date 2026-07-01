@@ -1,0 +1,223 @@
+/********** Template CSS **********/
+:root {
+    --primary: #3CB815;
+    --secondary: #F65005;
+    --light: #F7F8FC;
+    --dark: #111111;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+    color: var(--dark);
+}
+
+/*** Section Header (Manteniendo tu estilo original) ***/
+.section-header {
+    position: relative;
+    padding-top: 25px;
+}
+
+.section-header::before {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 2px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+}
+
+.section-header::after {
+    position: absolute;
+    content: "";
+    width: 90px;
+    height: 2px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary);
+}
+
+.section-header.text-start::before,
+.section-header.text-start::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+/*** Navbar (Ajustes para que coincida con el diseño) ***/
+.navbar .navbar-nav .nav-link {
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    color: var(--dark);
+    transition: 0.3s;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+/*** Carousel (Estilos para los captions) ***/
+.carousel-item {
+    max-height: 600px; /* Ajusta según tu imagen de referencia */
+}
+
+.carousel-item img {
+    object-fit: cover;
+    min-height: 400px;
+}
+
+.carousel-caption {
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Superposición oscura */
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/*** Sección: Nos Caracteriza (Flexbox) ***/
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.feature-item {
+    flex: 1 1 280px; /* Base de 280px, crece y se encoge */
+    max-width: 350px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item img {
+    width: 70px;
+    height: auto;
+}
+
+/*** Sección: Productos (Grid) ***/
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.product-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.product-item:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.product-item:hover .product-img img {
+    transform: scale(1.05);
+}
+
+.product-info a {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.product-actions small a {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.product-actions small a:hover {
+    color: var(--primary);
+}
+
+/* Pills de Bootstrap (Productos) */
+.nav-pills .nav-link {
+    color: var(--dark);
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 8px 20px;
+    margin: 0 5px;
+    background: var(--light);
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+/*** Sección: Visita nuestras fincas ***/
+.visit-farm {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/carousel-2.jpg') fixed center center;
+    background-size: cover;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+/*** Sección: Blog (con Bootstrap, pero refinado) ***/
+.card {
+    transition: transform 0.3s;
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body a {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    transition: color 0.3s;
+}
+
+.card-body a:hover {
+    color: var(--primary) !important;
+}
+
+/*** Footer ***/
+.bg-dark a:hover {
+    color: var(--primary) !important;
+    text-decoration: underline !important;
+}
+
+/* Ajustes para íconos en footer */
+.bg-dark i {
+    color: var(--secondary);
+    width: 25px;
+}
